@@ -8,7 +8,12 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
-
+                <div class="py-5 w-8/12 mx-auto flex justify-between">
+                    <h2 class="text-3xl">Repositorios Registrados</h2>
+                    <form action=" {{ route('repositories.create') }} " method="GET">
+                        <button type="submit" class="px-5 py-2 rounded-md text-white bg-blue-600 border-2">Crear Repositorio</button>
+                    </form>
+                </div>
 
                 <table class="table max-w-7xl mx-auto ">
                     <thead class="bg-slate-200">
@@ -29,14 +34,14 @@
                                 <td class="p-3">
                                     <form action="{{ route('repositories.show', $item) }}" >
                                         @csrf
-                                        <button type="submit" class="px-2 rounded-md bg-green-400 border-2 border-green-500">Ver</button>
+                                        <button type="submit" class="px-3 py-1 rounded-md bg-green-400 border-2 border-green-500">Ver</button>
                                     </form>
                                 </td>
                                 <td class="p-3">
                                     <form action="{{ route('repositories.destroy', $item) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="px-2 rounded-md bg-red-400 border-2 border-red-500">Eliminar</button>
+                                        <button type="submit" class="px-3 py-1 rounded-md bg-red-400 border-2 border-red-500">Eliminar</button>
                                     </form>
                                 </td>
                             </tr>

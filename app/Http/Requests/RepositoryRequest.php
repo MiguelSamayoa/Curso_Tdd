@@ -22,6 +22,7 @@ class RepositoryRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'title' => 'required',
             'url' => 'required',
             'description' => 'required'
         ];

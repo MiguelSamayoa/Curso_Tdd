@@ -8,20 +8,36 @@
 
     <div class="py-12">
         <div class="w-8/12 mx-auto">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold text-gray-900">
-                    {{ $repository->title }}
-                </h2>
-                <p class="text-gray-700 mt-2">
+            <div class="bg-white rounded-lg shadow-lg">
+                <div class="flex p-6 mb-5 bg-slate-600 text-white">
+                    <form class="mr-5" action="{{ route('repositories.index') }}" >
+                        <button class="bg-red-500 text-white px-4 py-2 rounded"> Regresar</button>
+                    </form>
+
+                    <h2 class="text-3xl font-bold text-white">
+                        {{ $repository->title }}
+                    </h2>
+
+                </div>
+                <p class="text-gray-700 my-10 px-6">
                     {{ $repository->description }}
                 </p>
-                <p class="text-sm text-gray-500 mt-2">
-                    Creado: <span>{{ $repository->created_at->diffForHumans() }}</span>
-                </p>
+
+                <div class="flex justify-between px-6 py-5">
+                    <form action="{{ route('repositories.index') }}" >
+                        <button class="bg-green-500 text-white px-4 py-2 rounded"> Editar </button>
+                    </form>
+
+                    <p class="text-sm text-gray-500 py-5 px-6">
+                        Creado: <span>{{ $repository->created_at->diffForHumans() }}</span>
+                    </p>
+                </div>
+
+
+
+
             <div class="mt-4">
-                <form action="{{ route('repositories.index') }}" >
-                    <button class="bg-red-500 text-white px-4 py-2 rounded"> Regresar</button>
-                </form>
+
 
             </div>
             </div>
