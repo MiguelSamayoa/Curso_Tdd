@@ -75,6 +75,11 @@ Este proyecto es el resultado del **Curso de Desarrollo en Laravel con TDD**. Se
    php artisan migrate
    ```
 
+   Si quieres usar los datos semilla incluidos ejecuta
+   ```bash
+   php artisan migrate --seed
+   ```
+   
 8. Compila los assets:
 
    ```bash

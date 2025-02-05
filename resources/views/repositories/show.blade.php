@@ -24,18 +24,14 @@
                 </p>
 
                 <div class="flex justify-between px-6 py-5">
-                    <form action="{{ route('repositories.index') }}" >
-                        <button class="bg-green-500 text-white px-4 py-2 rounded"> Editar </button>
-                    </form>
+                    <a href="{{ route('repositories.edit', $repository) }}" class="bg-green-500 text-white px-4 py-2 rounded">
+                        Editar
+                    </a>
 
                     <p class="text-sm text-gray-500 py-5 px-6">
                         Creado: <span>{{ $repository->created_at->diffForHumans() }}</span>
                     </p>
                 </div>
-
-
-
-
             <div class="mt-4">
 
 

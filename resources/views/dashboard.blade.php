@@ -32,11 +32,14 @@
                         <h2 class="text-2xl font-bold text-gray-900" x-text="selectedRepo?.title"></h2>
                         <p class="text-gray-700 mt-2" x-text="selectedRepo?.user.name"></p>
                         <p class="text-gray-700 mt-2" x-text="selectedRepo?.description"></p>
-                        <p class="text-sm text-gray-500 mt-2">
-                            Creado: <span x-text="new Date(selectedRepo?.created_at).toLocaleString('es-ES', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })"></span>
-                        </p>
-                    <div class="mt-4">
+                        <div class="mt-4">
                             <button class="bg-red-500 text-white px-4 py-2 rounded" @click="selectedRepo = null">Cerrar</button>
+
+                            <button  class="bg-green-500 text-white px-4 py-2 rounded"  @click="window.open(selectedRepo?.url, '_blank')">
+                                Ir al repositorio
+                            </button>
+
+
                         </div>
                     </div>
                 </div>
